@@ -1,0 +1,32 @@
+{
+  "customers": [
+    {
+      "accepts_marketing": false,
+      "orders_count": 0,
+      "addresses": [
+        {
+          "name": null,
+          "address1": "Chestnut Street 92",
+          "city": "Louisville",
+          "company": null,
+          "address2": "",
+          "zip": "40202",
+          "country_code": null,
+          "country": "US",
+          "province_code": null,
+          "last_name": null,
+          "phone": "555-625-1199",
+          "province": "KY",
+          "first_name": null
+        }
+      ],
+      "tags": "",
+      "id": 207119551,
+      "note": null,
+      "last_name": "Norman",
+      "total_spent": "0.00",
+      "first_name": "Bob",
+      "email": "bob.norman@hostmail.com"
+    }
+  ]
+}

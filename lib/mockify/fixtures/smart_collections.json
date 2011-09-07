@@ -1,0 +1,21 @@
+{
+  "smart_collections": [
+    {
+      "handle": "smart-ipods",
+      "body_html": "<p>The best selling ipod ever</p>",
+      "title": "Smart iPods",
+      "template_suffix": null,
+      "rules": [
+        {
+          "relation": "equals",
+          "column": "type",
+          "condition": "Cult Products"
+        }
+      ],
+      "updated_at": "2008-02-01T19:00:00-05:00",
+      "sort_order": "manual",
+      "id": 482865238,
+      "published_at": "2008-02-01T19:00:00-05:00"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "provinces": [
+    {
+      "tax": 0.08,
+      "name": "Alberta",
+      "tax_name": null,
+      "code": "AB",
+      "id": 205434194,
+      "tax_type": null
+    },
+    {
+      "tax": 0.07,
+      "name": "British Columbia",
+      "tax_name": null,
+      "code": "BC",
+      "id": 170405627,
+      "tax_type": null
+    },
+    {
+      "tax": 0.07,
+      "name": "Manitoba",
+      "tax_name": null,
+      "code": "MB",
+      "id": 342345110,
+      "tax_type": null
+    },
+    {
+      "tax": 0.15,
+      "name": "New Brunswick",
+      "tax_name": null,
+      "code": "NB",
+      "id": 92264567,
+      "tax_type": null
+    },
+    {
+      "tax": 0.15,
+      "name": "Newfoundland",
+      "tax_name": null,
+      "code": "NF",
+      "id": 243284171,
+      "tax_type": null
+    },
+    {
+      "tax": 0.0,
+      "name": "Northwest Territories",
+      "tax_name": null,
+      "code": "NT",
+      "id": 439598329,
+      "tax_type": null
+    },
+    {
+      "tax": 0.15,
+      "name": "Nova Scotia",
+      "tax_name": null,
+      "code": "NS",
+      "id": 448070559,
+      "tax_type": null
+    },
+    {
+      "tax": 0.0,
+      "name": "Nunavut",
+      "tax_name": null,
+      "code": "NU",
+      "id": 670206421,
+      "tax_type": null
+    },
+    {
+      "tax": 0.08,
+      "name": "Ontario",
+      "tax_name": null,
+      "code": "ON",
+      "id": 702530425,
+      "tax_type": null
+    },
+    {
+      "tax": 0.1,
+      "name": "Prince Edward Island",
+      "tax_name": null,
+      "code": "PE",
+      "id": 570891722,
+      "tax_type": null
+    },
+    {
+      "tax": 0.09,
+      "name": "Quebec",
+      "tax_name": null,
+      "code": "QC",
+      "id": 224293623,
+      "tax_type": null
+    },
+    {
+      "tax": 0.0,
+      "name": "Yukon",
+      "tax_name": null,
+      "code": "YT",
+      "id": 1005264686,
+      "tax_type": null
+    }
+  ]
+}

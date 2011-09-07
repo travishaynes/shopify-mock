@@ -1,0 +1,16 @@
+{
+  "countries": [
+    {
+      "tax": 0.05,
+      "name": "Canada",
+      "code": "CA",
+      "id": 879921427
+    },
+    {
+      "tax": 0.15,
+      "name": "Colombia",
+      "code": "CO",
+      "id": 359115488
+    }
+  ]
+}
