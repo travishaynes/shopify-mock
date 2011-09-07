@@ -34,7 +34,7 @@ this quick example:
 
     rails c
     :001 > ShopifyAPI::Mock.enabled = true
-    :002 > order = ShopifyAPI::Session("test", "randomtoken") { ShopifyAPI::Order.first }
+    :002 > order = ShopifyAPI::Session.temp("test", "randomtoken") { ShopifyAPI::Order.first }
 
 You'll notice that the order was not downloaded from Shopify, but based off of
 a ShopifyMock fixture found in lib/shopify-mock/fixtures/orders.json
