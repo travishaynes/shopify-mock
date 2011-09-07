@@ -24,4 +24,5 @@ browser, or in the console.}
   s.require_paths = ["lib"]
   
   s.add_dependency("fakeweb", [">= 1.3.0"])
+  s.add_dependency("rspec", [">= 2.6.0"])
 end
