@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assets type="array">
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-body-green.gif?1</public-url>
+    <key>assets/bg-body-green.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-body-orange.gif?1</public-url>
+    <key>assets/bg-body-orange.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-body-pink.gif?1</public-url>
+    <key>assets/bg-body-pink.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-body.gif?1</public-url>
+    <key>assets/bg-body.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-content.gif?1</public-url>
+    <key>assets/bg-content.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-footer.gif?1</public-url>
+    <key>assets/bg-footer.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-main.gif?1</public-url>
+    <key>assets/bg-main.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/bg-sidebar.gif?1</public-url>
+    <key>assets/bg-sidebar.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/shop.css?1</public-url>
+    <key>assets/shop.css</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/shop.css.liquid?1</public-url>
+    <key>assets/shop.css.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/shop.js?1</public-url>
+    <key>assets/shop.js</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/sidebar-devider.gif?1</public-url>
+    <key>assets/sidebar-devider.gif</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url>http://static.shopify.com/s/files/1/6909/3384/t/1/assets/sidebar-menu.jpg?1</public-url>
+    <key>assets/sidebar-menu.jpg</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>config/settings.html</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>layout/theme.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/article.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/blog.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/cart.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/collection.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/index.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/page.liquid</key>
+  </asset>
+  <asset>
+    <created-at type="datetime">2010-07-12T15:31:50-04:00</created-at>
+    <updated-at type="datetime">2010-07-12T15:31:50-04:00</updated-at>
+    <public-url nil="true"></public-url>
+    <key>templates/product.liquid</key>
+  </asset>
+</assets>

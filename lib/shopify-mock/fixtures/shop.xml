@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop>
+  <name>Apple Computers</name>
+  <city>Cupertino</city>
+  <address1>1 Infinite Loop</address1>
+  <zip>95014</zip>
+  <created-at type="datetime">2007-12-31T19:00:00-05:00</created-at>
+  <public type="boolean">false</public>
+  <country>US</country>
+  <domain>shop.apple.com</domain>
+  <id type="integer">690933842</id>
+  <phone nil="true"></phone>
+  <source nil="true"></source>
+  <province>CA</province>
+  <email>steve@apple.com</email>
+  <currency>USD</currency>
+  <timezone>(GMT-05:00) Eastern Time (US &amp; Canada)</timezone>
+  <shop-owner>Steve Jobs</shop-owner>
+  <money-format>$ {{amount}}</money-format>
+  <money-with-currency-format>$ {{amount}} USD</money-with-currency-format>
+  <taxes-included nil="true"></taxes-included>
+  <tax-shipping nil="true"></tax-shipping>
+  <plan-name>enterprise</plan-name>
+  <myshopify-domain>apple.myshopify.com</myshopify-domain>
+</shop>

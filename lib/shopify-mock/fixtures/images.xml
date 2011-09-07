@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<images type="array">
+  <image>
+    <position type="integer">2</position>
+    <created-at type="datetime">2011-09-06T11:58:33-04:00</created-at>
+    <product-id type="integer">632910392</product-id>
+    <updated-at type="datetime">2011-09-06T11:58:33-04:00</updated-at>
+    <id type="integer">916933535</id>
+    <src>http://static.shopify.com/s/files/1/6909/3384/products/rails_logo.gif?1</src>
+  </image>
+</images>

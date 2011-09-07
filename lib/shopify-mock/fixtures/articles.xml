@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articles type="array">
+  <article>
+    <body-html>I have no idea what to write about, but it's going to rock!</body-html>
+    <created-at type="datetime">2008-12-31T19:00:00-05:00</created-at>
+    <author>John</author>
+    <title>Some crazy article I'm coming up with</title>
+    <updated-at type="datetime">2009-01-31T19:00:00-05:00</updated-at>
+    <blog-id type="integer">241253187</blog-id>
+    <summary-html nil="true"></summary-html>
+    <id type="integer">989034056</id>
+    <user-id type="integer" nil="true"></user-id>
+    <published-at type="datetime" nil="true"></published-at>
+    <tags>Mystery</tags>
+  </article>
+  <article>
+    <body-html>&lt;p&gt;Do &lt;em&gt;you&lt;/em&gt; have an &lt;strong&gt;IPod&lt;/strong&gt; yet?&lt;/p&gt;</body-html>
+    <created-at type="datetime">2008-07-31T20:00:00-04:00</created-at>
+    <author>Dennis</author>
+    <title>get on the train now</title>
+    <updated-at type="datetime">2008-07-31T20:00:00-04:00</updated-at>
+    <blog-id type="integer">241253187</blog-id>
+    <summary-html nil="true"></summary-html>
+    <id type="integer">134645308</id>
+    <user-id type="integer">799407056</user-id>
+    <published-at type="datetime">2008-07-31T20:00:00-04:00</published-at>
+    <tags>Announcing</tags>
+  </article>
+</articles>
