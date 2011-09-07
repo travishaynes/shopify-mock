@@ -18,10 +18,20 @@ describe ShopifyAPI::Mock::Fixtures do
   context "custom fixtures" do
     before { @json = '{ "count": 10 }' }
     describe "#use" do
-      it "should override default fixture" do
-        ShopifyAPI::Mock::Fixtures.read(:orders).should eq read_fixture :orders
-        ShopifyAPI::Mock::Fixtures.use :count, @json
-        ShopifyAPI::Mock::Fixtures.read(:count).should eq @json
+      context "with custom fixture for content" do
+        it "should override default fixture" do
+          ShopifyAPI::Mock::Fixtures.read(:orders).should eq read_fixture :orders
+          ShopifyAPI::Mock::Fixtures.use :count, @json
+          ShopifyAPI::Mock::Fixtures.read(:count).should eq @json
+        end
+      end
+      context "with :default for content" do
+        it "should reset back to default texture" do
+          ShopifyAPI::Mock::Fixtures.use :count, @json
+          ShopifyAPI::Mock::Fixtures.read(:count).should eq @json
+          ShopifyAPI::Mock::Fixtures.use :count, :default
+          ShopifyAPI::Mock::Fixtures.read(:orders).should eq read_fixture :orders
+        end
       end
     end
   end
