@@ -42,4 +42,13 @@ a Mockify fixture found in lib/mockify/fixtures/orders.json
 
 == Fixtures
 
-All fixtures are copied directly from the {Shopify API}[http://api.shopify.com]
+You also have access to the Mockify fixtures from within your app to help with
+testing. To access a fixture, use Mockify::Fixtures:
+
+    Mockify::Fixtures.read(:orders) # => contents of orders.json
+
+You can also use your own fixtures if you'd like:
+
+    Mockify::Fixtures.use(:orders, order.to_json)
+
+All the fixtures are copied directly from the {Shopify API}[http://api.shopify.com]
