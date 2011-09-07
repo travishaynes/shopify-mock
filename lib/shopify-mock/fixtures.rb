@@ -19,8 +19,8 @@ module ShopifyAPI
           @cache[fixture_name]
         end
         
-        def use(name, content)
-          name = "#{name}.json"
+        def use(name, content, ext = :json)
+          name = "#{name}.#{ext.to_s}"
           if content == :default
             @cache.delete name if @cache.include? name
           else
