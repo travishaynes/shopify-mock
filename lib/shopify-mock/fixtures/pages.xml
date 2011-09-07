@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages type="array">
+  <page>
+    <body-html>&lt;p&gt;We make &lt;strong&gt;perfect&lt;/strong&gt; stuff, we don't need a warranty.&lt;/p&gt;</body-html>
+    <created-at type="datetime">2008-07-15T20:00:00-04:00</created-at>
+    <handle>tos</handle>
+    <author>Dennis</author>
+    <template-suffix nil="true"></template-suffix>
+    <title>Terms of Services</title>
+    <updated-at type="datetime">2008-07-16T20:00:00-04:00</updated-at>
+    <shop-id type="integer">690933842</shop-id>
+    <id type="integer">131092082</id>
+    <published-at type="datetime">2008-07-15T20:00:00-04:00</published-at>
+  </page>
+</pages>

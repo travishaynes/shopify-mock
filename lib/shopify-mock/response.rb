@@ -18,6 +18,15 @@ module ShopifyAPI
               ShopifyAPI::Mock::Fixtures.read(fixture)
             )
           end
+          
+          count_fixture = ShopifyAPI::Mock::Fixtures.read(:count, :xml)
+          ShopifyAPI::Mock::Fixtures.all(:xml).each do |fixture|
+            ShopifyAPI::Mock::Response.register(:get, "#{fixture.to_s}/count.xml", count_fixture)
+            ShopifyAPI::Mock::Response.register(
+              :get, "#{fixture.to_s}.xml",
+              ShopifyAPI::Mock::Fixtures.read(fixture, :xml)
+            )
+          end
         end
         
       end

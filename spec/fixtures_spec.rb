@@ -11,7 +11,9 @@ describe ShopifyAPI::Mock::Fixtures do
   context "when given a valid fixture name" do
     it "should return the contents of a fixture" do
       @json = read_fixture :test
+      @xml = read_fixture :test, :xml
       ShopifyAPI::Mock::Fixtures.read(:test).should eq @json
+      ShopifyAPI::Mock::Fixtures.read(:test, :xml).should eq @xml
     end
   end
   
@@ -21,7 +23,7 @@ describe ShopifyAPI::Mock::Fixtures do
     end
   end
   
-  context "custom fixtures" do
+  context "custom fixtures json" do
     before { @json = '{ "count": 10 }' }
     describe "#use" do
       context "with custom fixture for content" do
@@ -42,4 +44,26 @@ describe ShopifyAPI::Mock::Fixtures do
     end
   end
   
+  context "custom fixtures xml" do
+    before { @xml = '<?xml version="1.0" encoding="UTF-8"?><count type="integer">10</count>' }
+    describe "#use" do
+      context "with custom fixture for content" do
+        it "should override default fixture" do
+          ShopifyAPI::Mock::Fixtures.read(:orders, :xml).should eq read_fixture :orders, :xml
+          ShopifyAPI::Mock::Fixtures.read(:count, :xml).should eq read_fixture :count, :xml
+          ShopifyAPI::Mock::Fixtures.use :count, @xml, :xml
+          ShopifyAPI::Mock::Fixtures.read(:count, :xml).should eq @xml
+        end
+      end
+      context "with :default for content" do
+        it "should reset back to default fixture" do
+          ShopifyAPI::Mock::Fixtures.use :count, @xml, :xml
+          ShopifyAPI::Mock::Fixtures.read(:count, :xml).should eq @xml
+          ShopifyAPI::Mock::Fixtures.use :count, :default, :xml
+          ShopifyAPI::Mock::Fixtures.read(:count, :xml).should eq read_fixture :count, :xml
+          ShopifyAPI::Mock::Fixtures.read(:orders, :xml).should eq read_fixture :orders, :xml
+        end
+      end
+    end
+  end
 end

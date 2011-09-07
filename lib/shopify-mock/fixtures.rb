@@ -5,9 +5,9 @@ module ShopifyAPI
       
       class << self
         
-        def all
-          Dir[File.join(ShopifyAPI::Mock::Fixtures.path, "**", "*.json")].map do |fixture|
-            File.basename(fixture, ".json").to_sym
+        def all(ext = :json)
+          Dir[File.join(ShopifyAPI::Mock::Fixtures.path, "**", "*.#{ext.to_s}")].map do |fixture|
+            File.basename(fixture, ".#{ext.to_s}").to_sym
           end
         end
         
@@ -19,8 +19,8 @@ module ShopifyAPI
           @cache[fixture_name]
         end
         
-        def use(name, content)
-          name = "#{name}.json"
+        def use(name, content, ext = :json)
+          name = "#{name}.#{ext.to_s}"
           if content == :default
             @cache.delete name if @cache.include? name
           else

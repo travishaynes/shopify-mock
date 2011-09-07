@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions type="array">
+  <transaction>
+    <kind>capture</kind>
+    <created-at type="datetime">2011-09-06T12:02:14-04:00</created-at>
+    <order-id type="integer">450789469</order-id>
+    <amount type="decimal">10.0</amount>
+    <authorization nil="true"></authorization>
+    <status>success</status>
+    <receipt type="yaml">--- {}
+
+</receipt>
+  </transaction>
+</transactions>

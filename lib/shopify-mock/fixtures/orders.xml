@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders type="array">
+  <order>
+    <number type="integer">1</number>
+    <name>#1001</name>
+    <created-at type="datetime">2008-01-10T11:00:00-05:00</created-at>
+    <total-discounts type="decimal">0.0</total-discounts>
+    <cancel-reason nil="true"></cancel-reason>
+    <token>b1946ac92492d2347c6235b4d2611184</token>
+    <updated-at type="datetime">2008-01-10T11:00:00-05:00</updated-at>
+    <total-price type="decimal">210.94</total-price>
+    <landing-site>http://www.example.com?source=abc</landing-site>
+    <taxes-included type="boolean">false</taxes-included>
+    <cancelled-at type="datetime" nil="true"></cancelled-at>
+    <id type="integer">450789469</id>
+    <referring-site>http://www.otherexample.com</referring-site>
+    <total-line-items-price type="decimal">199.0</total-line-items-price>
+    <subtotal-price type="decimal">199.0</subtotal-price>
+    <note nil="true"></note>
+    <gateway>authorize_net</gateway>
+    <fulfillment-status nil="true"></fulfillment-status>
+    <financial-status>authorized</financial-status>
+    <currency>USD</currency>
+    <closed-at type="datetime" nil="true"></closed-at>
+    <buyer-accepts-marketing type="boolean">false</buyer-accepts-marketing>
+    <total-tax type="decimal">11.94</total-tax>
+    <total-weight type="integer">0</total-weight>
+    <email>bob.norman@hostmail.com</email>
+    <browser-ip nil="true"></browser-ip>
+    <landing-site-ref>abc</landing-site-ref>
+    <order-number type="integer">1001</order-number>
+    <shipping-lines type="array">
+      <shipping-line>
+        <price type="decimal">0.0</price>
+        <code>Free Shipping</code>
+        <title>Free Shipping</title>
+      </shipping-line>
+    </shipping-lines>
+    <customer>
+      <accepts-marketing type="boolean">false</accepts-marketing>
+      <orders-count type="integer">0</orders-count>
+      <id type="integer">207119551</id>
+      <note nil="true"></note>
+      <last-name>Norman</last-name>
+      <total-spent type="decimal">0.0</total-spent>
+      <first-name>Bob</first-name>
+      <email>bob.norman@hostmail.com</email>
+      <tags></tags>
+    </customer>
+    <shipping-address>
+      <company nil="true"></company>
+      <city>Louisville</city>
+      <address1>Chestnut Street 92</address1>
+      <latitude type="decimal">45.41634</latitude>
+      <zip>40202</zip>
+      <address2></address2>
+      <country>United States</country>
+      <phone>555-625-1199</phone>
+      <last-name>Norman</last-name>
+      <longitude type="decimal">-75.6868</longitude>
+      <province>Kentucky</province>
+      <first-name>Bob</first-name>
+      <name>Bob Norman</name>
+      <country-code>US</country-code>
+      <province-code>KY</province-code>
+    </shipping-address>
+    <billing-address>
+      <company nil="true"></company>
+      <city>Louisville</city>
+      <address1>Chestnut Street 92</address1>
+      <latitude type="decimal">45.41634</latitude>
+      <zip>40202</zip>
+      <address2></address2>
+      <country>United States</country>
+      <phone>555-625-1199</phone>
+      <last-name>Norman</last-name>
+      <longitude type="decimal">-75.6868</longitude>
+      <province>Kentucky</province>
+      <first-name>Bob</first-name>
+      <name>Bob Norman</name>
+      <country-code>US</country-code>
+      <province-code>KY</province-code>
+    </billing-address>
+    <line-items type="array">
+      <line-item>
+        <price type="decimal">199.0</price>
+        <product-id type="integer">632910392</product-id>
+        <title>IPod Nano - 8gb</title>
+        <quantity type="integer">1</quantity>
+        <requires-shipping type="boolean">true</requires-shipping>
+        <id type="integer">466157049</id>
+        <grams type="integer">200</grams>
+        <sku>IPOD2008GREEN</sku>
+        <fulfillment-status nil="true"></fulfillment-status>
+        <variant-title>green</variant-title>
+        <vendor nil="true"></vendor>
+        <fulfillment-service>manual</fulfillment-service>
+        <variant-id type="integer">39072856</variant-id>
+        <name>IPod Nano - 8gb - green</name>
+      </line-item>
+      <line-item>
+        <price type="decimal">199.0</price>
+        <product-id type="integer">632910392</product-id>
+        <title>IPod Nano - 8gb</title>
+        <quantity type="integer">1</quantity>
+        <requires-shipping type="boolean">true</requires-shipping>
+        <id type="integer">703073504</id>
+        <grams type="integer">200</grams>
+        <sku>IPOD2008BLACK</sku>
+        <fulfillment-status nil="true"></fulfillment-status>
+        <variant-title>black</variant-title>
+        <vendor nil="true"></vendor>
+        <fulfillment-service>manual</fulfillment-service>
+        <variant-id type="integer">457924702</variant-id>
+        <name>IPod Nano - 8gb - black</name>
+      </line-item>
+    </line-items>
+    <tax-lines type="array">
+      <tax-line>
+        <price type="decimal">11.94</price>
+        <title>State Tax</title>
+        <rate type="float">0.06</rate>
+      </tax-line>
+    </tax-lines>
+    <payment-details>
+      <credit-card-number>XXXX-XXXX-XXXX-4242</credit-card-number>
+      <credit-card-company>Visa</credit-card-company>
+    </payment-details>
+    <note-attributes type="array">
+      <note-attribute>
+        <name>colour</name>
+        <value>green</value>
+      </note-attribute>
+      <note-attribute>
+        <name>custom engraving</name>
+        <value>Happy Birthday</value>
+      </note-attribute>
+    </note-attributes>
+  </order>
+</orders>
