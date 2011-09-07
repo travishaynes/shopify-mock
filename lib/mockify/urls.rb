@@ -1,7 +1,7 @@
-MOCKIFY_SHOP = {
+SHOPIFY_MOCK_SHOP = {
   :domain   => "test.myshopify.com",
   :api_key  => "apikey",
   :secret   => "secret"
 }
 
-MOCKIFY_SHOP_BASE_URL = "https://.*:.*@#{MOCKIFY_SHOP[:domain]}/admin/"
+SHOPIFY_MOCK_SHOP_BASE_URL = "https://.*:.*@#{SHOPIFY_MOCK_SHOP[:domain]}/admin/"
