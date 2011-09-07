@@ -8,8 +8,13 @@ Gem::Specification.new do |s|
   s.authors     = ["Travis Haynes"]
   s.email       = ["travis.j.haynes@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Serves Shopify resources via FakeWeb for easily testing Shopify apps.}
+  s.description = %q{This gem is used for testing Shopify apps without having to actually connect to
+Shopify to develop the application.
+
+You can use this gem explicitely for testing, or you can also use it in your
+development environment to speed things up when fiddling around in the web
+browser, or in the console.}
 
   s.rubyforge_project = "mockify"
 

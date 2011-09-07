@@ -1,4 +1,4 @@
-== Mocked Shopify Shop
+= Mockify
 
 This gem is used for testing Shopify apps without having to actually connect to
 Shopify to develop the application.
@@ -19,11 +19,11 @@ For non Rails apps, Mockify is disabled by default, and real-world Internet
 access is allowed. In a Rails app, Mockify is disabled except for in the :test
 environment.
 
-Here's how to enable / disable Mockify:
+To enable / disable Mockify manually, set Mockify.enabled to true or false:
 
     Mockify.enabled = true # or false
 
-And to completely disable access to the Internet:
+And to completely disable access to the Internet altogether, or re-enable it:
 
     Mockify.allow_internet = false # or true to re-enable
 
@@ -39,3 +39,7 @@ this quick example:
 
 You'll notice that the order was not downloaded from Shopify, but based off of
 a Mockify fixture found in lib/mockify/fixtures/orders.json
+
+== Fixtures
+
+All fixtures are copied directly from the {Shopify API}[http://api.shopify.com]
