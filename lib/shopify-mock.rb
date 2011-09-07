@@ -3,6 +3,7 @@ require 'fakeweb'
 require 'shopify-mock/version'
 require 'shopify-mock/urls'
 require 'shopify-mock/fixtures'
+require 'shopify-mock/response'
 
 module ShopifyAPI
   module Mock
@@ -14,11 +15,17 @@ module ShopifyAPI
       def enabled=(value=false)
         return @enabled if value == @enabled
         if value
-          load File.expand_path("../shopify-mock/responses.rb", __FILE__)
+          #load File.expand_path("../shopify-mock/responses.rb", __FILE__)
+          ShopifyAPI::Mock::Response.register_all
         else
           FakeWeb.clean_registry
         end
         @enabled = value
+      end
+      
+      def reset
+        ShopifyAPI::Mock.enabled = false
+        ShopifyAPI::Mock.enabled = true
       end
       
       def allow_internet

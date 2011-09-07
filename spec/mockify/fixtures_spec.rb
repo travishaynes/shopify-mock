@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe ShopifyAPI::Mock::Fixtures do
   
+  describe "#all" do
+    it "should return an array" do
+      ShopifyAPI::Mock::Fixtures.all.should be_kind_of Array
+    end
+  end
+  
   context "when given a valid fixture name" do
     it "should return the contents of a fixture" do
       @json = read_fixture :test

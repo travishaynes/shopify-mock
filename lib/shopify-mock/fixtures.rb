@@ -5,6 +5,12 @@ module ShopifyAPI
       
       class << self
         
+        def all
+          Dir[File.join(ShopifyAPI::Mock::Fixtures.path, "**", "*.json")].map do |fixture|
+            File.basename(fixture, ".json").to_sym
+          end
+        end
+        
         def read(name, ext = :json)
           fixture_name = "#{name.to_s}.#{ext.to_s}"
           fixture = File.join(self.path, fixture_name)
@@ -20,6 +26,7 @@ module ShopifyAPI
           else
             @cache[name] = content
           end
+          ShopifyAPI::Mock.reset
         end
         
         def path
@@ -28,11 +35,13 @@ module ShopifyAPI
         
         def path=(value)
           @path = value
+          ShopifyAPI::Mock.reset
         end
         
         def reset
           @cache = {}
           @path = nil
+          ShopifyAPI::Mock::Responses.register_all
         end
         
       end
