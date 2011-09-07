@@ -3,7 +3,7 @@
 This gem is used for testing Shopify apps without having to actually connect to
 Shopify to develop the application.
 
-You can use this gem explicitely for testing, or you can also use it in your
+You can use this gem explicitly for testing, or you can also use it in your
 development environment to speed things up when fiddling around in the web
 browser, or in the console.
 
@@ -57,5 +57,22 @@ Or, if you'd prefer you can point the entire fixture path to a different locatio
     ShopifyAPI::Mock::Fixtures.path = File.join(Rails.root, 'spec', 'fixtures')
 
 
-All of the default fixtures are copied directly from the
-{Shopify API}[http://api.shopify.com]
+== Contributing to shopify-mock
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Resources
+
+* All of the default fixtures were copied directly from the {Shopify API}[http://api.shopify.com]
+
+
+== Copyright
+
+Copyright (c) 2011 Travis Haynes. See LICENSE.txt for further details.
+
