@@ -32,7 +32,7 @@ describe ShopifyAPI::Mock::Fixtures do
         end
       end
       context "with :default for content" do
-        it "should reset back to default texture" do
+        it "should reset back to default fixture" do
           ShopifyAPI::Mock::Fixtures.use :count, @json
           ShopifyAPI::Mock::Fixtures.read(:count).should eq @json
           ShopifyAPI::Mock::Fixtures.use :count, :default
