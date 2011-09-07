@@ -41,4 +41,4 @@ module ShopifyAPI
   end
 end
 
-ShopifyAPI::Mock.enable if defined?(Rails) && Rails.env.test?
+ShopifyAPI::Mock.enabled = true if defined?(Rails) && Rails.env.test?
