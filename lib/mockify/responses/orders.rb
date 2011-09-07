@@ -1,11 +1,6 @@
-# register response to read all orders
-FakeWeb.register_uri(
-  :get, /#{SHOPIFY_MOCK_SHOP_BASE_URL}orders.json/,
-  :body => ShopifyAPI::Mock::Fixtures.read(:orders)
-)
+orders = ShopifyAPI::Mock::Fixtures.read(:orders)
+count  = ShopifyAPI::Mock::Fixtures.read(:count)
 
-# register response to orders count
-FakeWeb.register_uri(
-  :get, /#{SHOPIFY_MOCK_SHOP_BASE_URL}orders\/count.json/,
-  :body => ShopifyAPI::Mock::Fixtures.read(:count)
-)
+ShopifyAPI::Mock::Response.register(:get, "orders/count.json", count)
+ShopifyAPI::Mock::Response.register(:get, "orders.json", orders)
+

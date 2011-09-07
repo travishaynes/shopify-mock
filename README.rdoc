@@ -27,7 +27,6 @@ And to completely disable access to the Internet altogether, or re-enable it:
 
     ShopifyAPI::Mock.allow_internet = false # or true to re-enable
 
-
 == Example
 
 After installing the gem in your Shopify app, load the rails console, and try
@@ -51,4 +50,10 @@ You can also use your own fixtures if you'd like:
 
     ShopifyAPI::Mock::Fixtures.use(:orders, order.to_json)
 
-All the fixtures are copied directly from the {Shopify API}[http://api.shopify.com]
+Or, if you'd prefer you can point the entire fixture path to a different
+location:
+
+    ShopifyAPI::Mock::Fixtures.path = File.join(Rails.root, 'spec', 'fixtures')
+
+All of the default fixtures are copied directly from the
+{Shopify API}[http://api.shopify.com]
