@@ -34,7 +34,7 @@ After installing the gem in your Shopify app, load the rails console, and try
 this quick example:
 
     rails c
-    :001 > Mockify.enable
+    :001 > Mockify.enabled = true
     :002 > order = ShopifyAPI::Session("test", "randomtoken") { ShopifyAPI::Order.first }
 
 You'll notice that the order was not downloaded from Shopify, but based off of
