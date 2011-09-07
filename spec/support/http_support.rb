@@ -3,9 +3,9 @@ def get(path = [], options = {}, user = MOCKIFY_SHOP[:api_key], pass = MOCKIFY_S
   options = parse_options(options)
   path = "#{path}?#{options}" unless options.nil?
   
-  Net::HTTP.start(MOCKIFY_SHOP[:domain], 443) do |http|
-    req = Net::HTTP::Get.new path
-    req.basic_auth user, pass
-    http.request req
-  end
+  http = Net::HTTP.new(MOCKIFY_SHOP[:domain], 443)
+  http.use_ssl = true
+  req = Net::HTTP::Get.new path
+  req.basic_auth user, pass
+  http.request req
 end

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Mockify::VERSION
   s.authors     = ["Travis Haynes"]
   s.email       = ["travis.j.haynes@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/travishaynes/mockify"
   s.summary     = %q{Serves Shopify resources via FakeWeb for easily testing Shopify apps.}
   s.description = %q{This gem is used for testing Shopify apps without having to actually connect to
 Shopify to develop the application.
