@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "mockify/version"
+require "shopify-mock/version"
 
 Gem::Specification.new do |s|
-  s.name        = "mockify"
-  s.version     = Mockify::VERSION
+  s.name        = "shopify-mock"
+  s.version     = ShopifyMock::VERSION
   s.authors     = ["Travis Haynes"]
   s.email       = ["travis.j.haynes@gmail.com"]
-  s.homepage    = "https://github.com/travishaynes/mockify"
+  s.homepage    = "https://github.com/travishaynes/shopify-mock"
   s.summary     = %q{Serves Shopify resources via FakeWeb for easily testing Shopify apps.}
   s.description = %q{This gem is used for testing Shopify apps without having to actually connect to
 Shopify to develop the application.
@@ -16,7 +16,7 @@ You can use this gem explicitely for testing, or you can also use it in your
 development environment to speed things up when fiddling around in the web
 browser, or in the console.}
 
-  s.rubyforge_project = "mockify"
+  s.rubyforge_project = "shopify-mock"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

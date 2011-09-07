@@ -1,8 +1,8 @@
 require 'fakeweb'
 
-require 'mockify/version'
-require 'mockify/urls'
-require 'mockify/fixtures'
+require 'shopify-mock/version'
+require 'shopify-mock/urls'
+require 'shopify-mock/fixtures'
 
 module ShopifyAPI
   module Mock
@@ -14,7 +14,7 @@ module ShopifyAPI
       def enabled=(value=false)
         return @enabled if value == @enabled
         if value
-          load File.expand_path("../mockify/responses.rb", __FILE__)
+          load File.expand_path("../shopify-mock/responses.rb", __FILE__)
         else
           FakeWeb.clean_registry
         end

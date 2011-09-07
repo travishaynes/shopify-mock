@@ -13,5 +13,5 @@ module ShopifyAPI
   end
 end
 
-require 'mockify/responses/orders'
-require 'mockify/responses/articles'
+require 'shopify-mock/responses/orders'
+require 'shopify-mock/responses/articles'
