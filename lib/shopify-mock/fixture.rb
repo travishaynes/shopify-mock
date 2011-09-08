@@ -3,8 +3,8 @@ module ShopifyAPI
     
     # provides easy access to fixtures
     class Fixture
-      @path = nil
-      @cache = {}
+      @@path = nil
+      @@cache = {}
       
       # creates a new instance of ShopifyAPI::Mock::Fixture
       # @param [String] file_name The location of the file to load into the fixture
@@ -77,7 +77,7 @@ module ShopifyAPI
           # map files to fixtures
           files.map do |file_name|
             fixture_name = File.basename(file_name)
-            @cache[fixture_name] ||= Fixture.new(file_name)
+            @@cache[fixture_name] ||= Fixture.new(file_name)
           end
         end
         
@@ -94,7 +94,7 @@ module ShopifyAPI
           fixture_name = "#{name.to_s}.#{ext.to_s}"
           file_name = File.join(self.path, ext.to_s, fixture_name)
           return nil unless File.exists? file_name
-          @cache[fixture_name] ||= Fixture.new(file_name)
+          @@cache[fixture_name] ||= Fixture.new(file_name)
         end
         
         # gets the current path to the fixtures
@@ -103,7 +103,7 @@ module ShopifyAPI
         #   fixture_path = ShopifyAPI::Mock::Fixture.path
         # @api public
         def path
-          @path ||= File.expand_path("../fixtures/", __FILE__)
+          @@path ||= File.expand_path("../fixtures/", __FILE__)
         end
         
         # sets the current fixtures path
@@ -113,9 +113,9 @@ module ShopifyAPI
         #   ShopifyAPI::Mock::Fixture.path = File.join(Rails.root, "spec", "fixtures", "shopify")
         # @api public
         def path=(value)
-          return @path if @path == value
-          @path = value
-          @cache = {}
+          return @@path if @@path == value
+          @@path = value
+          @@cache = {}
         end
       end
       
