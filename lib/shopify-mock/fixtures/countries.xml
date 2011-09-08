@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<countries type="array">
+  <country>
+    <tax type="float">0.05</tax>
+    <name>Canada</name>
+    <code>CA</code>
+    <id type="integer">879921427</id>
+  </country>
+  <country>
+    <tax type="float">0.15</tax>
+    <name>Colombia</name>
+    <code>CO</code>
+    <id type="integer">359115488</id>
+  </country>
+</countries>
