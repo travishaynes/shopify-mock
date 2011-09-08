@@ -2,30 +2,27 @@ require 'spec_helper'
 
 describe :response do
   
-  
-  describe "all registered responses" do
-    ShopifyAPI::Mock::Fixtures.all.each do |fixture|
-      describe "##{fixture}" do
-        describe "GET /#{fixture}.json" do
-          before do
-            @json = read_fixture fixture
-            @response = get fixture
-          end
-          it "should return #{fixture.to_s}.json fixture" do
-            @response.body.should eq @json
-          end
-        end
-        
-        describe "GET /#{fixture}/count.json" do
-          before do
-            @json = read_fixture :count
-            @response = get [fixture, :count]
-          end
-          it "should return count json" do
-            @response.body.should eq @json
-          end
-        end
-      end
+  describe "#new" do
+    before { @fixture = ShopifyAPI::Mock::Fixture.find :orders }
+    it "should cache the new response" do
+      count = ShopifyAPI::Mock::Response.all.count
+      ShopifyAPI::Mock::Response.new(:get, "/orders.json", @fixture)
+      ShopifyAPI::Mock::Response.all.count.should eq count + 1
     end
   end
+  
+  describe "#all" do
+    subject { ShopifyAPI::Mock::Fixture.all }
+    it { should be_kind_of Array }
+  end
+  
+  describe "#clear" do
+    it "should clear the responses" do
+      ShopifyAPI::Mock::Response.new(:get, "/orders.json", @fixture)
+      ShopifyAPI::Mock::Response.all.count.should > 0
+      ShopifyAPI::Mock::Response.clear
+      ShopifyAPI::Mock::Response.all.count.should eq 0
+    end
+  end
+  
 end
