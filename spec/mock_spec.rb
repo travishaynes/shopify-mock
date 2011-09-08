@@ -27,6 +27,14 @@ describe ShopifyAPI::Mock do
     end
     
     context "while ShopifyAPI::Mock is enabled" do
+      before { ShopifyAPI::Mock.enabled = true }
+      
+      it "should reset back to original responses" do
+        ShopifyAPI::Mock::Response.clear
+        ShopifyAPI::Mock::Response.all.count.should eq 0
+        ShopifyAPI::Mock.reset
+        ShopifyAPI::Mock::Response.all.count.should > 0
+      end
     end
   end
   

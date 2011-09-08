@@ -45,7 +45,8 @@ module ShopifyAPI
       def reset
         raise ShopifyAPI::Mock::DisabledError, "cannot reset ShopifyAPI::Mock while it is disabled" \
           unless ShopifyAPI::Mock.enabled?
-        self.class.register_fixed_responses
+        ShopifyAPI::Mock.enabled = false
+        ShopifyAPI::Mock.enabled = true
       end
       
       # gets the state of access to the real Internet

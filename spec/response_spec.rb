@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe :response do
   
+  after(:all) { ShopifyAPI::Mock.reset }
+  
   describe "#new" do
     before { @fixture = ShopifyAPI::Mock::Fixture.find :orders }
     it "should cache the new response" do
