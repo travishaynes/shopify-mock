@@ -2,7 +2,7 @@ require 'fakeweb'
 
 require 'shopify-mock/errors'
 require 'shopify-mock/urls'
-require 'shopify-mock/fixtures'
+require 'shopify-mock/fixture'
 require 'shopify-mock/response'
 
 # Mock is an extension for the ShopifyAPI
