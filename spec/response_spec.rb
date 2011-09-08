@@ -14,7 +14,7 @@ describe :response do
   end
   
   describe "#all" do
-    subject { ShopifyAPI::Mock::Fixture.all }
+    subject { ShopifyAPI::Mock::Response.all }
     it { should be_kind_of Array }
   end
   
