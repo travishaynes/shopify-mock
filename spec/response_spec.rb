@@ -13,17 +13,19 @@ describe :response do
     end
   end
   
-  describe "#all" do
-    subject { ShopifyAPI::Mock::Response.all }
-    it { should be_kind_of Array }
-  end
-  
-  describe "#clear" do
-    it "should clear the responses" do
-      ShopifyAPI::Mock::Response.new(:get, "/orders.json", @fixture)
-      ShopifyAPI::Mock::Response.all.count.should > 0
-      ShopifyAPI::Mock::Response.clear
-      ShopifyAPI::Mock::Response.all.count.should eq 0
+  describe "class methods" do
+    describe "#all" do
+      subject { ShopifyAPI::Mock::Response.all }
+      it { should be_kind_of Array }
+    end
+    
+    describe "#clear" do
+      it "should clear the responses" do
+        ShopifyAPI::Mock::Response.new(:get, "/orders.json", @fixture)
+        ShopifyAPI::Mock::Response.all.count.should > 0
+        ShopifyAPI::Mock::Response.clear
+        ShopifyAPI::Mock::Response.all.count.should eq 0
+      end
     end
   end
   
