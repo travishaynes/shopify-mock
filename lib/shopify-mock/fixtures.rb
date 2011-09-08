@@ -43,6 +43,8 @@ module ShopifyAPI
       #   data = fixture.data # => the contents of "./orders.xml"
       #   fixture.data = "hello world"
       #   data = fixture.data # => "hello world"
+      # @example Set contents of a fixture back to their default
+      #   fixture.data = nil
       # @api public
       def data=(value)
         @data = value
@@ -66,7 +68,14 @@ module ShopifyAPI
         #   ShopifyAPI::Mock::Fixture.all
         # @api public
         def all
-          Dir[File.join(ShopifyAPI::Mock::Fixture.path, "*")].map do |file_name|
+          # get a list of all the fixture files
+          files = []
+          Dir[File.join(ShopifyAPI::Mock::Fixture.path, "**", "*")].each do |f|
+            files << f unless File.directory? f
+          end
+          
+          # map files to fixtures
+          files.map do |file_name|
             fixture_name = File.basename(file_name)
             @cache[fixture_name] ||= Fixture.new(file_name)
           end
@@ -83,7 +92,7 @@ module ShopifyAPI
         # @api public
         def find(name, ext = :json)
           fixture_name = "#{name.to_s}.#{ext.to_s}"
-          file_name = File.join(self.path, fixture_name)
+          file_name = File.join(self.path, ext.to_s, fixture_name)
           return nil unless File.exists? file_name
           @cache[fixture_name] ||= Fixture.new(file_name)
         end

@@ -11,7 +11,7 @@ describe ShopifyAPI::Mock::Fixture do
     
     context "with valid file name" do
       before do
-        @file_name = File.expand_path("../../lib/shopify-mock/fixtures/orders.json", __FILE__)
+        @file_name = File.expand_path("../../lib/shopify-mock/fixtures/json/orders.json", __FILE__)
         @fixture = ShopifyAPI::Mock::Fixture.new(@file_name)
       end
       specify { @fixture.should be_a ShopifyAPI::Mock::Fixture }

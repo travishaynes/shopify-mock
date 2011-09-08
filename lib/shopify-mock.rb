@@ -77,12 +77,12 @@ module ShopifyAPI
         
         registered_responses = []
         ShopifyAPI::Mock::Fixture.all.each do |fixture|
-          # register the count fixture for this resource
+          # register the count fixture for this resource, if it exists
           count_fixture = ShopifyAPI::Mock::Fixture.find(:count, fixture.ext.to_sym)
           registered_responses << ShopifyAPI::Mock::Response.new(
             :get, "#{fixture.name.to_s}/count.#{fixture.ext}",
             count_fixture.data
-          )
+          ) unless count_fixture.nil?
           # register the resource fixture
           registered_responses << ShopifyAPI::Mock::Response.new(
             :get, "#{fixture.name.to_s}.#{fixture.ext.to_s}",

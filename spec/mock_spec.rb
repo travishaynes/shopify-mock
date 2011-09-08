@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe ShopifyAPI::Mock do
   
+  after(:all) do
+    # reset things back to the way they were before these tests ran
+    ShopifyAPI::Mock.enabled = false # disable and
+    ShopifyAPI::Mock.enabled = true  # re-enable to ensure mocks reset
+    ShopifyAPI::Mock.allow_internet = false
+  end
+  
   describe "#enabled=" do
     context "given true" do
       before { ShopifyAPI::Mock.enabled = true }
