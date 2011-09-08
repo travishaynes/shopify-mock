@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-collections type="array">
+  <custom-collection>
+    <body-html>&lt;p&gt;The best selling ipod ever&lt;/p&gt;</body-html>
+    <handle>ipods</handle>
+    <template-suffix nil="true"></template-suffix>
+    <title>IPods</title>
+    <updated-at type="datetime">2008-02-01T19:00:00-05:00</updated-at>
+    <sort-order>manual</sort-order>
+    <id type="integer">841564295</id>
+    <published-at type="datetime">2008-02-01T19:00:00-05:00</published-at>
+  </custom-collection>
+</custom-collections>

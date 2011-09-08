@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer-groups type="array">
+  <customer-group>
+    <name>Accepts Marketing</name>
+    <created-at type="datetime">2011-08-30T07:52:08-04:00</created-at>
+    <updated-at type="datetime">2011-08-30T07:52:08-04:00</updated-at>
+    <id type="integer">789629109</id>
+    <query>accepts_marketing:1</query>
+  </customer-group>
+  <customer-group>
+    <name>Canadian Snowboarders</name>
+    <created-at type="datetime">2011-08-30T07:52:08-04:00</created-at>
+    <updated-at type="datetime">2011-08-30T07:52:08-04:00</updated-at>
+    <id type="integer">20610973</id>
+    <query>location:Canada</query>
+  </customer-group>
+  <customer-group>
+    <name>Premier Customers</name>
+    <created-at type="datetime">2011-08-30T07:52:08-04:00</created-at>
+    <updated-at type="datetime">2011-08-30T07:52:08-04:00</updated-at>
+    <id type="integer">669439218</id>
+    <query>John Smith orders_count:&gt;10 total_spent:&gt;100.00</query>
+  </customer-group>
+</customer-groups>
