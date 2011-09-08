@@ -1,4 +1,4 @@
-= ShopifyMock
+= shopify-mock
 
 This gem is used for testing Shopify apps without having to actually connect to
 Shopify to develop the application.
@@ -15,48 +15,66 @@ Add the gem to your Gemfile in the appropriate group:
 
 == Enabling / Disabling
 
-For non Rails apps, ShopifyMock is disabled by default, and real-world Internet
-access is allowed. In a Rails app, ShopifyMock is disabled except for in the :test
+For non Rails apps, shopify-mock is disabled by default, and real-world Internet
+access is allowed. In a Rails app, shopify-mock is disabled except for in the :test
 environment.
 
-To enable / disable ShopifyMock manually, set ShopifyAPI::Mock.enabled to true or false:
+To enable / disable shopify-mock manually, set ShopifyAPI::Mock.enabled to true or false:
 
-    ShopifyAPI::Mock.enabled = true # or false
+    ShopifyAPI::Mock.enabled = true         # or false to disable
+    ShopifyAPI::Mock.enabled?               # => to get the current state
 
 And to completely disable access to the Internet altogether, or re-enable it:
 
     ShopifyAPI::Mock.allow_internet = false # or true to re-enable
+    ShopifyAPI::Mock.allow_internet?        # => to get the current state
 
 == Example
 
 After installing the gem in your Shopify app, load the rails console, and try
 this quick example:
 
-    rails c
-    :001 > ShopifyAPI::Mock.enabled = true
-    :002 > order = ShopifyAPI::Session.temp("test", "randomtoken") { ShopifyAPI::Order.first }
+    rails c test
+    order = ShopifyAPI::Session.temp("test", "randomtoken") { ShopifyAPI::Order.first }
 
 You'll notice that the order was not downloaded from Shopify, but based off of
-a ShopifyMock fixture found in lib/shopify-mock/fixtures/orders.json
+a shopify-mock fixture found in lib/shopify-mock/fixtures/orders.json
+
+== Responses
+
+You have access to all the registered mock responses through ShopifyAPI::Mock::Response
+
+    ShopifyAPI::Mock::Response.all   # => array of all registered responses
+    ShopifyAPI::Mock::Response.clear # => clears all the currently registered responses
+
+And you can register your own response:
+    
+    ShopifyAPI::Mock::Response.new(:get, "orders/1.xml", "response content")
 
 == Fixtures
 
-You have access to the ShopifyMock fixtures from within your app to help with
-testing. To access a fixture, use ShopifyAPI::Mock::Fixtures:
+You have access to the shopify-mock fixtures through ShopifyAPI::Mock::Fixture
 
-    ShopifyAPI::Mock::Fixtures.read(:orders) # => contents of orders.json
-
-You can also use your own fixtures if you'd like:
-
-    ShopifyAPI::Mock::Fixtures.use :orders, order.to_json # => use custom content for :orders
-    ShopifyAPI::Mock::Fixtures.use :orders, :default      # => reset :orders to default fixture
-    ShopifyAPI::Mock::Fixtures.reset                      # => reset all the fixtures back to their defaults
-
-Or, if you'd prefer you can point the entire fixture path to a different location:
-
-    ShopifyAPI::Mock::Fixtures.path = File.join(Rails.root, 'spec', 'fixtures')
-
-
+    ShopifyAPI::Mock::Fixture.all                   # => an array of all the fixtures
+    ShopifyAPI::Mock::Fixture.find(:orders, :json)  # => returns the orders.json fixture
+    ShopifyAPI::Mock::Fixture.path                  # => the path to the fixture files
+    
+    # to use your own fixture path:
+    ShopifyAPI::Mock::Fixture.path = File.join(Rails.root, 'spec', 'fixtures')
+    ShopifyAPI::Mock.reset # => to reload the fixtures
+    
+A Fixture object has these methods:
+    
+    fixture = ShopifyAPI::Mock::Fixture.all.first
+    
+    fixture.name  # => the name of the fixture, such as :orders
+    fixture.ext   # => the extension of the fixture, such as :json, or :xml
+    fixture.data  # => the file contents
+    
+    # to override the fixture's contents:
+    fixture.data = "new contents" # => use "new contents" for this fixture
+    fixture.data = nil            # => resets back to default contents
+    
 == Contributing to shopify-mock
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
