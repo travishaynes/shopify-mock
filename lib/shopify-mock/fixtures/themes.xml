@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themes type="array">
+  <theme>
+    <name>Comfort</name>
+    <created-at type="datetime">2011-09-06T11:58:19-04:00</created-at>
+    <updated-at type="datetime">2011-09-06T11:58:19-04:00</updated-at>
+    <role>main</role>
+    <id type="integer">828155753</id>
+  </theme>
+  <theme>
+    <name>Speed</name>
+    <created-at type="datetime">2011-09-06T11:58:19-04:00</created-at>
+    <updated-at type="datetime">2011-09-06T11:58:19-04:00</updated-at>
+    <role>mobile</role>
+    <id type="integer">976877075</id>
+  </theme>
+  <theme>
+    <name>Sandbox</name>
+    <created-at type="datetime">2011-09-06T11:58:19-04:00</created-at>
+    <updated-at type="datetime">2011-09-06T11:58:19-04:00</updated-at>
+    <role>unpublished</role>
+    <id type="integer">752253240</id>
+  </theme>
+</themes>
