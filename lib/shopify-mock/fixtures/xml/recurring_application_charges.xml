@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurring-application-charge>
+  <price type="decimal">10.0</price>
+  <name>Super Duper Plan</name>
+  <created-at type="datetime">2011-09-06T11:59:27-04:00</created-at>
+  <trial-days type="integer">0</trial-days>
+  <return-url>http://super-duper.shopifyapps.com</return-url>
+  <activated-on type="date" nil="true"></activated-on>
+  <updated-at type="datetime">2011-09-06T11:59:27-04:00</updated-at>
+  <id type="integer">654381205</id>
+  <cancelled-on type="date" nil="true"></cancelled-on>
+  <trial-ends-on type="date" nil="true"></trial-ends-on>
+  <billing-on type="date" nil="true"></billing-on>
+  <test type="boolean">true</test>
+  <status>pending</status>
+  <confirmation-url>http://apple.myshopify.com/admin/subscriptions/confirm_recurring_application_charge/654381205?signature=BAhpBJUQASc%3D--53e16e6658a181c4448475252e1282f3b01354eb</confirmation-url>
+</recurring-application-charge>

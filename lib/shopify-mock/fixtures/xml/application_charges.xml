@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application-charge>
+  <price type="decimal">100.0</price>
+  <name>Super Duper Expensive action</name>
+  <created-at type="datetime">2011-09-06T11:52:12-04:00</created-at>
+  <return-url>http://super-duper.shopifyapps.com</return-url>
+  <updated-at type="datetime">2011-09-06T11:52:12-04:00</updated-at>
+  <id type="integer">1007331651</id>
+  <test type="boolean" nil="true"></test>
+  <status>pending</status>
+  <confirmation-url>http://apple.myshopify.com/admin/subscriptions/confirm_application_charge/1007331651?signature=BAhpBEOpCjw%3D--373db9ba20ab12e32af89ebcd7274f9c461b16b2</confirmation-url>
+</application-charge>

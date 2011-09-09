@@ -7,8 +7,8 @@ module ShopifyAPI
       # @param [String] resource The path to the resource.
       # @param [String] response The response to provide when that URL is called
       # @return [FakeWeb] The FakeWeb object for the mocked response
-      # @example Registering a response to the path "/orders.count.xml" with the response "hello world"
-      #   ShopifyAPI::Mock::Response.register :get, "orders/count.xml", "hello world"
+      # @example Registering a response to the path "/orders/count.xml" with the response "hello world"
+      #   ShopifyAPI::Mock::Response.new :get, "orders/count.xml", "hello world"
       # @api public
       def initialize(method, resource, response)
         @@responses += FakeWeb.register_uri(

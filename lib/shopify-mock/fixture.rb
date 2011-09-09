@@ -18,7 +18,7 @@ module ShopifyAPI
       # gets the content of the fixture
       # @return [String] the contents of the file, or @data if it was overwritten
       # @example Create a fixture and read its contents
-      #   fixture = ShopifyAPI::Fixture("./orders.xml")
+      #   fixture = ShopifyAPI::Fixture.new "./orders.xml"
       #   data = fixture.data # => the contents of "./orders.xml"
       # @api public
       def data
@@ -28,7 +28,7 @@ module ShopifyAPI
       # gets the name of the fixture
       # @return [Symbol] the the file name without the extension
       # @example Load a fixture and get its name
-      #   fixture = ShopifyAPI::Fixture("./orders.xml")
+      #   fixture = ShopifyAPI::Fixture.new "./orders.xml"
       #   name = fixture.name # => :orders
       # @api public
       def name
@@ -39,7 +39,7 @@ module ShopifyAPI
       # @param [String] value The new value to use, or set to nil to reset to default
       # @return The new contents of the fixture
       # @example Override a the contents of a fixture
-      #   fixture = ShopifyAPI::Fixture("./orders.xml")
+      #   fixture = ShopifyAPI::Fixture.new "./orders.xml"
       #   data = fixture.data # => the contents of "./orders.xml"
       #   fixture.data = "hello world"
       #   data = fixture.data # => "hello world"
@@ -54,7 +54,7 @@ module ShopifyAPI
       # gets the extension of the fixture
       # @return [Symbol] The extension
       # @example Create a new fixture and get its extension
-      #   fixture = ShopifyAPI::Fixture("./orders.xml")
+      #   fixture = ShopifyAPI::Fixture.new "./orders.xml"
       #   ext = fixture.ext # => :xml
       # @api public
       def ext
