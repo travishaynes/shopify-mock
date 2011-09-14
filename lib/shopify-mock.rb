@@ -1,4 +1,5 @@
 require 'fakeweb'
+require 'xml'
 
 require 'shopify-mock/errors'
 require 'shopify-mock/urls'
@@ -91,8 +92,8 @@ module ShopifyAPI
           # register the individual get by id
           # /products/:id.:format
           #TODO : add xml responses as well
+          fixture_data = parse_fixture_data(fixture)
           if fixture.ext == :json
-            fixture_data = JSON.parse(fixture.data)
             objects = fixture_data[fixture.name.to_s]
             if objects && objects.is_a?(Array)
               objects.each do |obj|
@@ -102,7 +103,28 @@ module ShopifyAPI
                 end
               end
             end
+          elsif fixture.ext == :xml
+            objects = fixture_data.find("//#{fixture.name.to_s}/#{fixture.name.to_s.singularize}")
+            if objects
+              objects.each do |obj|
+                id_node = obj.find_first('id')
+                if id_node && id_node.content
+                  _id = id_node.content
+                  registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{_id}.#{fixture.ext.to_s}", obj.to_s)
+                end
+              end
+            end
           end
+        end
+      end
+      
+      private
+      def parse_fixture_data(fixture)
+        case fixture.ext
+        when :xml
+          XML::Document.string(fixture.data)
+        when :json
+          JSON.parse(fixture.data)
         end
       end
     end
