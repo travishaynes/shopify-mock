@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'xml' # libxml-ruby gem
 
 shared_examples "a collection" do
   let(:collection) { 
@@ -35,6 +36,42 @@ describe "ShopifyAPI objects" do
       it_behaves_like "a collection"
     end
     
+  end
+
+  # still to test
+  # :articles, :events, :fulfillments,:variants, :transactions :provinces, :images, :metafields,
+  # test find on classes which have ids
+  [:blogs, :comments, :countries,  :customers,  :orders, :pages, :products, 
+   :redirects, :themes, :webhooks].each do |o|
+    describe 'find by :id.json' do
+      it "find #{o}/:id.json should return a ShopifyAPI::#{o.to_s.singularize.classify} item with the right id" do
+        
+        clz = "ShopifyAPI::" << o.to_s.singularize.classify
+        clz = clz.constantize
+        
+        first_item = JSON.parse(ShopifyAPI::Mock::Fixture.find(o, :json).data)[o.to_s].first
+        found = clz.find(first_item['id'].to_i)
+        found.should be_a clz
+        found.id.should == first_item['id']
+      end
+    end
+    describe 'find by :id.xml' do
+      it "find #{o}/:id.xml should return a ShopifyAPI::#{o.to_s.singularize.classify} item with the right id" do
+        
+        # grab id from fixture which we'll use to compare with the actual results from find
+        fixture_xml = XML::Document.string(ShopifyAPI::Mock::Fixture.find(o, :xml).data)
+        finder = "//#{o.to_s}/#{o.to_s.singularize}/id"
+        first_item_id = fixture_xml.find_first(finder).content.to_i
+
+        clz = "ShopifyAPI::" << o.to_s.singularize.classify
+        clz = clz.constantize
+
+        found = clz.find(first_item_id)
+        found.should be_a clz
+        found.id.should == first_item_id
+      end
+    end
+
   end
 
   # still to test

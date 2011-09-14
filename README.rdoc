@@ -47,6 +47,12 @@ You have access to all the registered mock responses through ShopifyAPI::Mock::R
     ShopifyAPI::Mock::Response.all   # => array of all registered responses
     ShopifyAPI::Mock::Response.clear # => clears all the currently registered responses
 
+You also have access to each Shopify object asset by it's `id` based on the ids in the fixtures.  If you are using the fixtures include in the gem, you can do
+    
+    product = ShopifyAPI::Product.find(632910392)
+
+and you'll get back the fixture product called `Ipod Nano 8GB`
+
 And you can register your own response:
     
     ShopifyAPI::Mock::Response.new(:get, "orders/1.xml", "response content")
