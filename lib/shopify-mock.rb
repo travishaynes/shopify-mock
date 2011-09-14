@@ -88,8 +88,22 @@ module ShopifyAPI
             :get, "#{fixture.name.to_s}.#{fixture.ext.to_s}",
             fixture.data
           )
+          # register the individual get by id
+          # /products/:id.:format
+          #TODO : add xml responses as well
+          if fixture.ext == :json
+            fixture_data = JSON.parse(fixture.data)
+            objects = fixture_data[fixture.name.to_s]
+            if objects && objects.is_a?(Array)
+              objects.each do |obj|
+                if obj.has_key? 'id'
+                  result = { "#{fixture.name.to_s.singularize}" => obj }
+                  registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", result.to_json)
+                end
+              end
+            end
+          end
         end
-        registered_responses
       end
     end
   end
