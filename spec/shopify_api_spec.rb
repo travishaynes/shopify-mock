@@ -40,9 +40,19 @@ describe "ShopifyAPI objects" do
     end
   end
 
-  describe 'delete' do
-    # nothing to test - once we've got the fake web requests in place (Mr Rogers 03 13 2012)
-    # look in the mock_spec for counting the delete urls that got registered
+  describe 'destroy' do
+    [:blogs, :comments, :countries,  :customers,  :orders, :pages, :products, 
+     :redirects, :themes, :webhooks].each do |o|
+      describe 'find by :id.json' do
+        it "destroy #{o}.id should return success for ShopifyAPI::#{o.to_s.singularize.classify}" do
+          clz = "ShopifyAPI::" << o.to_s.singularize.classify
+          clz = clz.constantize
+          first_item = JSON.parse(ShopifyAPI::Mock::Fixture.find(o, :json).data)[o.to_s].first
+          found = clz.find(first_item['id'].to_i)
+          lambda{ found.destroy }.should_not raise_error
+        end
+      end
+    end
   end
 
   describe 'find one' do
