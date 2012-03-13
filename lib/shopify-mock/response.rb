@@ -1,7 +1,7 @@
 module ShopifyAPI
   module Mock
     # used to manage the mocked responses
-    class Response < Struct.new(:method, :resource, :response)
+    class Response
       # creates and registers a new mocked response
       # @param [Symbol] method The method of the reponse. Can be one of [:put, :get, :post, :delete]
       # @param [String] resource The path to the resource.
