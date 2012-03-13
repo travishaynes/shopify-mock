@@ -100,6 +100,7 @@ module ShopifyAPI
                 if obj.has_key? 'id'
                   result = { "#{fixture.name.to_s.singularize}" => obj }
                   registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", result.to_json)
+                  registered_responses << ShopifyAPI::Mock::Response.new(:delete, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", '')
                 end
               end
             end
@@ -111,6 +112,7 @@ module ShopifyAPI
                 if id_node && id_node.content
                   _id = id_node.content
                   registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{_id}.#{fixture.ext.to_s}", obj.to_s)
+                  registered_responses << ShopifyAPI::Mock::Response.new(:delete, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", '')
                 end
               end
             end
