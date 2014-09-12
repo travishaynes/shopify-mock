@@ -11,9 +11,17 @@ describe ShopifyAPI::Mock do
   
   describe "#enabled=" do
     context "given true" do
+      before do
+        # ideally this should be computed from the true fixture data but i'm being lazy (Mr Rogers)
+        @num_objects_in_fixtures = 40
+      end
+        
       before { ShopifyAPI::Mock.enabled = true }
-      it "should register a response for each fixtures * 2 for the count fixtures" do        
-        ShopifyAPI::Mock::Response.all.count.should eq ShopifyAPI::Mock::Fixture.all.count * 2
+      it "should register 2 responses per fixture and 4 responses (get.xml, get.json, delete.xml, delete.json) for each object in the fixture" do
+        ShopifyAPI::Mock::Response.all.count.should == ShopifyAPI::Mock::Fixture.all.count * 2 + 4 * @num_objects_in_fixtures
+      end
+      it "should register 2 delete responses (xml/json) for each object in the fixture" do
+        ShopifyAPI::Mock::Response.all.select{|resp| resp.method == :delete}.count.should == 2 * @num_objects_in_fixtures
       end
     end
     

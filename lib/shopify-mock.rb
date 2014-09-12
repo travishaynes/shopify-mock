@@ -99,7 +99,14 @@ module ShopifyAPI
               objects.each do |obj|
                 if obj.has_key? 'id'
                   result = { "#{fixture.name.to_s.singularize}" => obj }
-                  registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", result.to_json)
+                  # GET https://fake_key:pass@myshop.myshopify.com/admin/products/123.xml"
+                  find_req = ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", result.to_json)
+
+                  # DELETE https://fake_key:pass@myshop.myshopify.com/admin/products/123.xml"
+                  del_req = ShopifyAPI::Mock::Response.new(:delete, "#{fixture.name.to_s}/#{obj['id']}.#{fixture.ext.to_s}", {:body => "#{fixture.name.to_s} #{obj['id']} deleted.", :status => ["200", "OK"]}.to_json)
+                  
+                  registered_responses << find_req
+                  registered_responses << del_req 
                 end
               end
             end
@@ -111,6 +118,7 @@ module ShopifyAPI
                 if id_node && id_node.content
                   _id = id_node.content
                   registered_responses << ShopifyAPI::Mock::Response.new(:get, "#{fixture.name.to_s}/#{_id}.#{fixture.ext.to_s}", obj.to_s)
+                  registered_responses << ShopifyAPI::Mock::Response.new(:delete, "#{fixture.name.to_s}/#{_id}.#{fixture.ext.to_s}", {:body => "#{fixture.name.to_s} #{_id} deleted.", :status => ["200", "OK"]}.to_xml)
                 end
               end
             end
