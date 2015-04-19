@@ -9,7 +9,7 @@ connect to Shopify to develop the application.
 
 Add the gem to your Gemfile in the appropriate group:
 
-    gem 'shopify-mock', group: [:development, :test]
+    gem 'shopify-mock', group: test
 
 ## Development
 
