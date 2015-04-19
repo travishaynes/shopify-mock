@@ -5,10 +5,6 @@ This gem is used for testing apps that use
 [shopify_api](https://github.com/Shopify/shopify_api) without having to actually
 connect to Shopify to develop the application.
 
-You can use this gem explicitly for testing, or you can also use it in your
-development environment to speed things up when fiddling around in the web
-browser, or in the console.
-
 ## Installation
 
 Add the gem to your Gemfile in the appropriate group:
