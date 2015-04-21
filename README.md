@@ -1,9 +1,9 @@
 ShopifyAPI::Mock
 ================
 
-This gem is used for testing apps that use
-[shopify_api](https://github.com/Shopify/shopify_api) without having to actually
-connect to Shopify to develop the application.
+This gem makes it easy to test applications that use the
+[shopify_api](https://github.com/Shopify/shopify_api) gem by creating a set of
+mocked responses for the requests made to the API.
 
 ## Installation
 
@@ -11,13 +11,21 @@ Add the gem to your Gemfile in the appropriate group:
 
     gem 'shopify-mock', group: test
 
-## Usage
+## How It Works
+
+This gem reads JSON fixtures from a folder and uses ActiveResource::HttpMock to
+set the mocked responses. ERB can be used in the fixtures to provide dynamic
+content, however the provided fixtures are direct copies of the responses. They
+are exact copies of the responses described in the official
+[Shopify API documentation](https://docs.shopify.com/api).
 
 ### Quickstart
 
-Use `ShopifyAPI::Mock.setup` in either the test helper or on a test by test
-basis. The Shopify API requires an access token. A randomly generated token is
-provided by default, but it can be set manually when necessary:
+The mocks will not be setup until `ShopifyAPI::Mock.setup` is called, and will
+persist until a call to `ShopifyAPI::Mock.teardown` is made.
+
+The Shopify API requires an access token. A randomly generated token is provided
+by default, but it can be set manually when necessary:
 
 ```ruby
 ShopifyAPI::Mock.token = 'a4ba06e4f49cf349d973d461f52a3a21'
@@ -26,6 +34,17 @@ ShopifyAPI::Mock.token = 'a4ba06e4f49cf349d973d461f52a3a21'
 Once the token is set it will be used until `ShopifyAPI::Mock.teardown` is
 called, which will reset the fixtures and the token to nil. The next time the
 token is requested a new one will be randomly generated.
+
+The `ShopifyAPI::Mock.session` helper method provides a `ShopifyAPI::Session`
+that will connect to the mocked API.
+
+Here's an example of setting up the mocks and using them to get an order:
+
+```ruby
+ShopifyAPI::Mock.token = SecureRandom.hex(16)
+ShopifyAPI::Mock.setup
+order = ShopifyAPI::Mock.session { ShopifyAPI::Order.first }
+```
 
 ### ActiveResource::HttpMock
 

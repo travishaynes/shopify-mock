@@ -21,6 +21,7 @@ class MockedResponsesTest < ActiveSupport::TestCase
     session do
       assert_kind_of ShopifyAPI::Order, ShopifyAPI::Order.first
       assert_kind_of ShopifyAPI::Event, ShopifyAPI::Event.find(677313116)
+      assert_kind_of ShopifyAPI::Shop, ShopifyAPI::Shop.current
     end
   end
 

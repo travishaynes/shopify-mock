@@ -1,0 +1,23 @@
+---
+status: 201
+---
+{
+  "customer_address": {
+    "address1": "1 Rue des Carrieres",
+    "address2": "Suite 1234",
+    "city": "Montreal",
+    "company": "Fancy Co.",
+    "country": "Canada",
+    "first_name": "Samuel",
+    "id": 1053317286,
+    "last_name": "de Champlain",
+    "phone": "819-555-5555",
+    "province": "Quebec",
+    "zip": "G1R 4P5",
+    "name": "Samuel de Champlain",
+    "province_code": "QC",
+    "country_code": "CA",
+    "country_name": "Canada",
+    "default": false
+  }
+}

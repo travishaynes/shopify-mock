@@ -1,0 +1,40 @@
+{
+  "user": {
+    "account_owner": true,
+    "bio": null,
+    "email": "steve@apple.com",
+    "first_name": "Steve",
+    "id": 799407056,
+    "im": null,
+    "last_name": "Jobs",
+    "permissions": [
+      "full"
+    ],
+    "phone": null,
+    "receive_announcements": 1,
+    "screen_name": null,
+    "url": "www.apple.com",
+    "user_type": "regular",
+    "display_payments_banner": true,
+    "dashboard_announcement": {
+      "announcement_url": "http:\/\/www.shopify.com",
+      "created_at": "2015-03-26T13:31:19-04:00",
+      "description": "I got a fever...",
+      "expires_at": "2015-06-28T13:31:19-04:00",
+      "id": 3,
+      "image_url": "https:\/\/www.socialmediaexplorer.com\/wp-content\/uploads\/2011\/01\/morecowbell.jpg",
+      "is_modal": true,
+      "modal_content": "<img src='https:\/\/www.socialmediaexplorer.com\/wp-content\/uploads\/2011\/01\/morecowbell.jpg'\/>",
+      "name": "Dashboard - Announcing Shopify with more cowbell!",
+      "published_at": "2015-03-26T13:31:19-04:00",
+      "segment": "",
+      "use_push_state": false,
+      "viewed": null
+    },
+    "has_unviewed_announcements?": true,
+    "recent_admin_browser_sessions": [
+    ],
+    "phone_validated?": false,
+    "tfa_enabled?": false
+  }
+}

@@ -1,0 +1,61 @@
+---
+status: 201
+---
+{
+  "customer": {
+    "accepts_marketing": false,
+    "created_at": "2015-03-28T13:28:12-04:00",
+    "email": "steve.lastnameson@example.com",
+    "first_name": "Steve",
+    "id": 1018520248,
+    "last_name": "Lastnameson",
+    "last_order_id": null,
+    "multipass_identifier": null,
+    "note": null,
+    "orders_count": 0,
+    "state": "disabled",
+    "total_spent": "0.00",
+    "updated_at": "2015-03-28T13:28:12-04:00",
+    "verified_email": true,
+    "tags": "",
+    "last_order_name": null,
+    "default_address": {
+      "address1": "123 Oak St",
+      "address2": null,
+      "city": "Ottawa",
+      "company": null,
+      "country": "Canada",
+      "first_name": "Mother",
+      "id": 1053317297,
+      "last_name": "Lastnameson",
+      "phone": "555-1212",
+      "province": "Ontario",
+      "zip": "123 ABC",
+      "name": "Mother Lastnameson",
+      "province_code": "ON",
+      "country_code": "CA",
+      "country_name": "Canada",
+      "default": true
+    },
+    "addresses": [
+      {
+        "address1": "123 Oak St",
+        "address2": null,
+        "city": "Ottawa",
+        "company": null,
+        "country": "Canada",
+        "first_name": "Mother",
+        "id": 1053317297,
+        "last_name": "Lastnameson",
+        "phone": "555-1212",
+        "province": "Ontario",
+        "zip": "123 ABC",
+        "name": "Mother Lastnameson",
+        "province_code": "ON",
+        "country_code": "CA",
+        "country_name": "Canada",
+        "default": true
+      }
+    ]
+  }
+}

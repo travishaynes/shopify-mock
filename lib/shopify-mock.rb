@@ -26,6 +26,15 @@ module ShopifyAPI
         @token ||= SecureRandom.hex(16)
       end
 
+      # Yields the supplied block in a temporary ShopifyAPI::Session.
+      #
+      # @param [String] domain Defaults to `test.myshopify.com`.
+      def session(domain='test.myshopify.com', &block)
+        ShopifyAPI::Session.temp(domain, ShopifyAPI::Mock.token) do
+          yield if block_given?
+        end
+      end
+
       # Paths that contain the fixtures for the mocked responses.
       #
       # @example Adding a custom path.

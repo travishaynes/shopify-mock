@@ -1,0 +1,20 @@
+---
+status: 201
+---
+{
+  "country": {
+    "code": "FR",
+    "id": 980881732,
+    "name": "France",
+    "tax": 0.2,
+    "tax_name": "TVA",
+    "provinces": [
+    ],
+    "weight_based_shipping_rates": [
+    ],
+    "price_based_shipping_rates": [
+    ],
+    "carrier_shipping_rate_providers": [
+    ]
+  }
+}

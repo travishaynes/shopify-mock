@@ -1,0 +1,104 @@
+{
+  "refund": {
+    "created_at": "2015-03-28T13:31:19-04:00",
+    "id": 509562969,
+    "note": "it broke during shipping",
+    "order_id": 450789469,
+    "restock": true,
+    "user_id": 799407056,
+    "refund_line_items": [
+      {
+        "id": 104689539,
+        "line_item_id": 703073504,
+        "quantity": 1,
+        "line_item": {
+          "fulfillment_service": "manual",
+          "fulfillment_status": null,
+          "gift_card": false,
+          "grams": 200,
+          "id": 703073504,
+          "price": "199.00",
+          "product_id": 632910392,
+          "quantity": 1,
+          "requires_shipping": true,
+          "sku": "IPOD2008BLACK",
+          "taxable": true,
+          "title": "IPod Nano - 8gb",
+          "variant_id": 457924702,
+          "variant_title": "black",
+          "vendor": null,
+          "name": "IPod Nano - 8gb - black",
+          "variant_inventory_management": "shopify",
+          "properties": [
+          ],
+          "product_exists": true,
+          "fulfillable_quantity": 1,
+          "total_discount": "0.00",
+          "tax_lines": [
+          ]
+        }
+      },
+      {
+        "id": 709875399,
+        "line_item_id": 466157049,
+        "quantity": 1,
+        "line_item": {
+          "fulfillment_service": "manual",
+          "fulfillment_status": null,
+          "gift_card": false,
+          "grams": 200,
+          "id": 466157049,
+          "price": "199.00",
+          "product_id": 632910392,
+          "quantity": 1,
+          "requires_shipping": true,
+          "sku": "IPOD2008GREEN",
+          "taxable": true,
+          "title": "IPod Nano - 8gb",
+          "variant_id": 39072856,
+          "variant_title": "green",
+          "vendor": null,
+          "name": "IPod Nano - 8gb - green",
+          "variant_inventory_management": "shopify",
+          "properties": [
+            {
+              "name": "Custom Engraving Front",
+              "value": "Happy Birthday"
+            },
+            {
+              "name": "Custom Engraving Back",
+              "value": "Merry Christmas"
+            }
+          ],
+          "product_exists": true,
+          "fulfillable_quantity": 1,
+          "total_discount": "0.00",
+          "tax_lines": [
+          ]
+        }
+      }
+    ],
+    "transactions": [
+      {
+        "amount": "209.00",
+        "authorization": "authorization-key",
+        "created_at": "2005-08-05T12:59:12-04:00",
+        "currency": "USD",
+        "gateway": "bogus",
+        "id": 179259969,
+        "kind": "refund",
+        "location_id": null,
+        "message": null,
+        "order_id": 450789469,
+        "parent_id": null,
+        "status": "success",
+        "test": false,
+        "user_id": null,
+        "device_id": null,
+        "receipt": {},
+        "error_code": null,
+        "source_name": "web"
+      }
+    ]
+  }
+}

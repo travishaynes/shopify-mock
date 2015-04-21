@@ -1,0 +1,17 @@
+---
+status: 201
+---
+{
+  "webhook": {
+    "address": "http:\/\/whatever.hostname.com",
+    "created_at": "2015-03-28T13:33:43-04:00",
+    "fields": [
+    ],
+    "format": "json",
+    "id": 987911556,
+    "metafield_namespaces": [
+    ],
+    "topic": "orders\/create",
+    "updated_at": "2015-03-28T13:33:43-04:00"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "customer_address": {
+    "address1": "Chestnut Street 92",
+    "address2": "",
+    "city": "Louisville",
+    "company": null,
+    "country": "United States",
+    "first_name": null,
+    "id": 207119551,
+    "last_name": null,
+    "phone": "555-625-1199",
+    "province": "Kentucky",
+    "zip": "40202",
+    "name": "",
+    "province_code": "KY",
+    "country_code": "US",
+    "country_name": "United States",
+    "default": true
+  }
+}

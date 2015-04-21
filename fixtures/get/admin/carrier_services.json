@@ -1,0 +1,11 @@
+{
+  "carrier_services": [
+    {
+      "active": true,
+      "id": 763770008,
+      "name": "Purolator",
+      "service_discovery": true,
+      "carrier_service_type": "api"
+    }
+  ]
+}
