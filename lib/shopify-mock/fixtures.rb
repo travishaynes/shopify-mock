@@ -12,9 +12,10 @@ module ShopifyAPI
     #
     # @example Retrieving a fixture.
     #
-    #     path = File.expand_path('../fixtures/responses', __FILE__)
+    #     path = File.expand_path('../fixtures', __FILE__)
     #     fixtures = ShopifyAPI::Mock::Fixtures.new(path)
-    #     fixtures[:get]['/events.json']
+    #     fixtures[:get]['/admin/events.json']
+    #     # Gets a fixture for `fixtures/get/admin/events.json`.
     #
     class Fixtures
       include Enumerable
@@ -126,7 +127,7 @@ module ShopifyAPI
           .first.to_sym
       end
 
-      # Collects one level of sub directories for the supplied path.
+      # Collects the first level of sub directories for the supplied path.
       #
       # @param [String] path The path to search.
       # @return [Array] The sub-directories directly in the path.

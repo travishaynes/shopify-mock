@@ -12,13 +12,14 @@ class MockedResponsesTest < ActiveSupport::TestCase
   test 'requests without responses' do
     session do
       assert_raises ActiveResource::InvalidRequestError do
-        ShopifyAPI::Order.first
+        ShopifyAPI::Order.find('x')
       end
     end
   end
 
   test 'requests to a mocked response' do
     session do
+      assert_kind_of ShopifyAPI::Order, ShopifyAPI::Order.first
       assert_kind_of ShopifyAPI::Event, ShopifyAPI::Event.find(677313116)
     end
   end

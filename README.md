@@ -48,21 +48,13 @@ The mocked requests and responses are located in this gem's `fixtures` folder.
 The folder's structure looks like this:
 
     fixtures
-    ├── requests
-    |   ├── delete
-    |   ├── get
-    |   ├── post
-    │   ├── post
-    │   └── put
-    └── responses
-        ├── delete
-        ├── get
-        ├── post
-        └── put
+    ├── delete
+    ├── get
+    ├── post
+    └── put
 
-The requests will only be used if they have a corresponding response. To provide
-a custom HTTP status code or headers include a YAML header in the fixture. For
-example:
+To provide a custom HTTP status code or headers include a YAML header in the
+fixture. For example:
 
     ---
     status: 404
@@ -74,8 +66,8 @@ The `---` dashes before and after the header are required.
 
 ERB can be used inside the fixtures for dynamic requests and responses.
 
-To add additional requests and responses create a directory that has the same
-structure and add it to `ShopifyAPI::Mock.fixture_paths`. For example:
+To add additional responses create a directory that has the same structure and
+add it to `ShopifyAPI::Mock.fixture_paths`. For example:
 
 ```ruby
 ShopifyAPI::Mock.fixture_paths << Rails.root.join('lib/fixtures/shopify_api')

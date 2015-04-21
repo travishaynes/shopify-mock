@@ -26,7 +26,7 @@ module ShopifyAPI
         @token ||= SecureRandom.hex(16)
       end
 
-      # Paths that contain the fixtures for the mocked requests and responses.
+      # Paths that contain the fixtures for the mocked responses.
       #
       # @example Adding a custom path.
       #
@@ -59,47 +59,50 @@ module ShopifyAPI
       #     end
       #
       # @param [ActiveResource::HttpMock::Responder] An optional responder.
+      # @return [NilClass]
       def setup(mock=nil)
         if mock.nil?
           ActiveResource::HttpMock.respond_to {|mock| setup(mock) }
         else
-          fixtures_for(:responses).each {|*args| mock_response(mock, *args) }
+          fixtures.each {|*args| mock_response(mock, *args) }
         end
+
+        nil
       end
 
+      # Mocks a response for the API.
+      #
+      # @param [ActiveResource::HttpMock::Responder] The responder to use.
+      # @param [Symbol] verb The HTTP verb.
+      # @param [String] endpoint The request's API endpoint.
+      # @param [ShopifyAPI::Mock::Fixture] The fixture to use for the mock.
       def mock_response(mock, verb, endpoint, fixture)
         mock.public_send(
           verb,
           endpoint,
-          request_headers_for(verb, endpoint),
+          request_headers,
           fixture.json(erb_context),
           fixture.yaml.fetch('status', 200),
           fixture.yaml.fetch('headers', {})
         )
       end
 
-      def request_headers_for(verb, endpoint)
-        headers = ShopifyAPI::Base.headers.dup
-        headers['X-Shopify-Access-Token'] = ShopifyAPI::Mock.token
-        request = fixtures_for(:requests)[verb][endpoint]
-        return headers if request.nil?
-        headers.merge(request.yaml.fetch('headers', {}))
-      end
-
-      # Loads the fixtures for the supplied type.
+      # Generates request headers for making a request to the API.
       #
-      # @param [Symbol] type Can be either :responses or :requests.
-      # @return [Array] An array of ShopifyAPI::Mock::Fixtures.
-      def fixtures_for(type)
-        @fixtures ||= {}
-
-        @fixtures[type] ||= begin
-          paths = fixture_paths.map {|path| File.join(path, "#{type}") }
-          ShopifyAPI::Mock::Fixtures.new(*paths)
-        end
+      # @return [Hash] The request headers.
+      def request_headers
+        ShopifyAPI::Base.headers.dup.merge(
+          'X-Shopify-Access-Token' => ShopifyAPI::Mock.token)
       end
 
-      # Removes the mocked requests.
+      # Gets the fixtures.
+      #
+      # @return [ShopifyAPI::Mock::Fixtures] The fixtures.
+      def fixtures
+        @fixtures ||= ShopifyAPI::Mock::Fixtures.new(*fixture_paths)
+      end
+
+      # Removes the mocked responses.
       #
       # @see ShopifyAPI::Mock.setup
       def teardown
@@ -107,7 +110,7 @@ module ShopifyAPI
 
         @token = nil
         @erb_context = nil
-        @fixtures = {}
+        @fixtures = nil
       end
     end
   end
