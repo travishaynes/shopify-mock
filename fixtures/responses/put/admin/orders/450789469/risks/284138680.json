@@ -1,0 +1,14 @@
+{
+  "risk": {
+    "cause_cancel": false,
+    "checkout_id": null,
+    "display": true,
+    "id": 284138680,
+    "message": "After further review, this is a legitimate order",
+    "order_id": 450789469,
+    "recommendation": "accept",
+    "score": "0.0",
+    "source": "External",
+    "merchant_message": "After further review, this is a legitimate order"
+  }
+}
