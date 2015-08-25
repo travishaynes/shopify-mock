@@ -24,7 +24,7 @@ browser, or in the console.}
   s.require_paths = %w{lib}
 
   s.add_dependency 'rake'
-  s.add_dependency 'shopify_api', '= 3.2.7'
+  s.add_dependency 'shopify_api', '~> 4.0.0'
 
   s.add_development_dependency 'minitest', '= 5.6.0'
   s.add_development_dependency 'byebug', '~> 4.0.5'
