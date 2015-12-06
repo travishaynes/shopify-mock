@@ -2,7 +2,7 @@ require 'test_helper'
 
 class FixtureTest < ActiveSupport::TestCase
   setup do
-    path = File.expand_path('../fixtures/test.json', __FILE__)
+    path = File.expand_path('../fixtures/main/test.json', __FILE__)
     @fixture = ShopifyAPI::Mock::Fixture.new(path)
   end
 
