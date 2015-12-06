@@ -67,7 +67,7 @@ module ShopifyAPI
 
       # Reloads the fixtures.
       def reload
-        @fixtures = {}
+        @fixtures = Hash.new { |h,v| h[v] = {} }
         paths.each {|path| load_fixtures(path) }
       end
 
@@ -79,7 +79,7 @@ module ShopifyAPI
       def load_fixtures(path)
         subdirs(path).each do |subdir|
           verb = verb_from_path(path, subdir)
-          @fixtures[verb] = map_fixtures(path, subdir, verb)
+          @fixtures[verb].merge!(map_fixtures(path, subdir, verb))
         end
       end
 
@@ -90,7 +90,7 @@ module ShopifyAPI
       # @param [Symbol] verb The HTTP verb the fixtures are for.
       # @return [Hash] The fixtures.
       def map_fixtures(root, path, verb)
-        @fixtures[verb] = fixture_files(path).inject({}) do |result, file|
+        fixture_files(path).inject({}) do |result, file|
           result.merge!(get_endpoint(root, file, verb) => Fixture.new(file))
         end
       end
