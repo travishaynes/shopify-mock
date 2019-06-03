@@ -34,8 +34,12 @@ And to completely disable access to the Internet altogether, or re-enable it:
 After installing the gem in your Shopify app, load the rails console, and try
 this quick example:
 
-    rails c test
-    order = ShopifyAPI::Session.temp("test", "randomtoken") { ShopifyAPI::Order.first }
+    rails c -e test
+    
+    ShopifyAPI::Base.api_version = '2019-04'
+    session = ShopifyAPI::Session.new(domain: "domain", token: "randomtoken", api_version: "2019-04")
+    ShopifyAPI::Base.activate_session(session)
+    ShopifyAPI::Order.first
 
 You'll notice that the order was not downloaded from Shopify, but based off of
 a shopify-mock fixture found in lib/shopify-mock/fixtures/orders.json
