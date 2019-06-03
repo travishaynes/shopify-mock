@@ -8,7 +8,7 @@ shared_examples "a collection" do
   
   describe "#all" do
     it "should be an Array of #{described_class}" do
-      collection.should be_a Array
+      collection.should be_a ActiveResource::Collection
       collection.first.should be_a described_class
     end
   end
@@ -19,13 +19,14 @@ describe "ShopifyAPI objects" do
   around(:each) do |example|
     # create a temporary Shopify session
     ShopifyAPI::Session.secret = 'secret'
-    ShopifyAPI::Base.site = ShopifyAPI::Session.new("domain", "token").site
+    ShopifyAPI::Base.api_version = '2019-04'
+    ShopifyAPI::Base.site = ShopifyAPI::Session.new(domain: "domain", token: "token", api_version: "2019-04").site
     example.run
   end
   
   # test collections
-  [ :blog, :comment, :country, :custom_collection, :customer_group,
-    :customer, :order, :page, :product_search_engine, :product, :redirect,
+  [ :blog, :comment, :country, :custom_collection,
+    :customer, :order, :page, :product, :redirect,
     :script_tag, :smart_collection, :theme, :webhook
   ].each do |o|
     
@@ -77,7 +78,7 @@ describe "ShopifyAPI objects" do
   # still to test
   # :articles, :events, :fulfillments,:variants, :transactions :provinces, :images, :metafields,
   # test find on classes which have ids
-  [:blogs, :comments, :countries, :custom_collections, :customer_groups,
+  [:blogs, :comments, :countries, :custom_collections,
    :customers,  :orders, :pages, :products,  :redirects, :script_tags, 
    :smart_collections, :themes, :webhooks].each do |o|
 

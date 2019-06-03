@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product-search-engines type="array">
-  <engine>
-    <created-at type="datetime">2011-09-06T11:58:19-04:00</created-at>
-    <name>Google Product Search</name>
-  </engine>
-</product-search-engines>
