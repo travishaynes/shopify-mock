@@ -5,7 +5,7 @@ describe ShopifyAPI::Mock::Fixture do
   describe "#new" do
     context "with invalid file name" do
       it "should raise IOError" do
-        expect {ShopifyAPI::Mock::Fixture.new("invalid-file") }.should raise_error, IOError
+        expect {ShopifyAPI::Mock::Fixture.new("invalid-file") }.to raise_error IOError
       end
     end
     
