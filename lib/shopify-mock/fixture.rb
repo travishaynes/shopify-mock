@@ -11,7 +11,7 @@ module ShopifyAPI
       # @raise [IOError] Raised when file_name is invalid
       # @api private
       def initialize(file_name)
-        raise IOError, "File not found: #{file_name}" unless File.exists? file_name
+        raise IOError, "File not found: #{file_name}" unless File.exist? file_name
         @file_name = file_name
       end
       
@@ -93,7 +93,7 @@ module ShopifyAPI
         def find(name, ext = :json)
           fixture_name = "#{name.to_s}.#{ext.to_s}"
           file_name = File.join(self.path, ext.to_s, fixture_name)
-          return nil unless File.exists? file_name
+          return nil unless File.exist? file_name
           @@cache[fixture_name] ||= Fixture.new(file_name)
         end
         
